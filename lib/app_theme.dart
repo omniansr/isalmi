@@ -22,4 +22,14 @@ class AppTheme {
     )
     ),
   );
+
+  static ThemeData darkTheme = ThemeData(
+    primaryColor: primary,
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: primary,
+        type: BottomNavigationBarType.fixed,
+       selectedItemColor: white,
+      showUnselectedLabels: false,
+    ),
+  );
 }
