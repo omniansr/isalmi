@@ -24,6 +24,8 @@ class islami extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      themeMode: ThemeMode.dark,
       routes: {HomeScreen.routename: (_) => HomeScreen(),
       OnboardingScreen.routename:(_) => OnboardingScreen()},
       initialRoute: onBoarding ? HomeScreen.routename : OnboardingScreen.routename,
