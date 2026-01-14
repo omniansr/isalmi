@@ -16,18 +16,18 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   int currentIndex = 0;
 
   final List<OnboardingModel> pages =[
-    OnboardingModel(image: 'assets/images/welcome.png',
+    OnboardingModel(image: 'assets/images/introduction1.png',
         title: 'Welcome To Islmi App', body: ""),
-    OnboardingModel(image: 'assets/images/image1intro.png',
+    OnboardingModel(image: 'assets/images/introduction2.png',
         title: 'Welcome To Islami',
         body: 'We Are Very Excited To Have You In Our Community'),
-    OnboardingModel(image: 'assets/images/image2intro.png',
+    OnboardingModel(image: 'assets/images/introduction3.png',
         title: 'Reading the Quran',
         body: 'Read, and your Lord is the Most Generous'),
-    OnboardingModel(image: 'assets/images/image3intro.png',
+    OnboardingModel(image: 'assets/images/introduction4.png',
         title: 'Bearish',
         body: 'Praise the name of your Lord, the Most High'),
-    OnboardingModel(image: 'assets/images/image4intro.png',
+    OnboardingModel(image: 'assets/images/introduction5.png',
         title: 'Holy Quran Radio',
         body: 'You can listen to the Holy Quran Radio through the application for free and easily')
   ];
@@ -42,18 +42,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      backgroundColor: AppTheme.background,
       body: Column(
         mainAxisAlignment: .spaceBetween,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 16.0,right: 50,left: 50),
-            child: Container(
-              height: 150,
-              width: double.infinity,
-              child: Image.asset('assets/images/appbar_intro.png',fit: BoxFit.cover,),
-              ),
-          ),
+          Image.asset('assets/images/header.png',
+            height: MediaQuery.sizeOf(context).height * 0.17,
+            fit: BoxFit.fitWidth,),
 
           Expanded(
             child: PageView.builder(
@@ -77,7 +72,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     Text(
                       pages[index].title,
                       textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.titleSmall
+                      style: Theme.of(context).textTheme.headlineLarge
                     ),
 
                     const SizedBox(height: 40),
@@ -87,7 +82,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       child: Text(
                         pages[index].body,
                         textAlign: TextAlign.center,
-                        style: Theme.of(context).textTheme.bodySmall
+                        style: Theme.of(context).textTheme.headlineMedium
                       ),
                     ),
 
