@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:islami/app_theme.dart';
+import 'package:islami/tabs/quran/quran_service.dart';
+import 'package:islami/tabs/quran/sura_details.dart';
 import 'home_screen.dart';
 import 'onboarding_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 
-void main() async {
+Future<void> main() async {
  WidgetsFlutterBinding.ensureInitialized();
-
-  final prefs = await SharedPreferences.getInstance();
+ await QuranService.getMostRecentlySuras();
+ final prefs = await SharedPreferences.getInstance();
   bool onBoarding = prefs.getBool('onBoarding') ?? false;
-
   runApp(islami(onBoarding: onBoarding));
 }
 
@@ -27,6 +28,7 @@ class islami extends StatelessWidget {
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.dark,
       routes: {HomeScreen.routename: (_) => HomeScreen(),
+        SuraDetails.routename: (_) => SuraDetails(),
       OnboardingScreen.routename:(_) => OnboardingScreen()},
       initialRoute: onBoarding ? HomeScreen.routename : OnboardingScreen.routename,
     );
