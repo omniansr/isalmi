@@ -11,6 +11,34 @@ class AppTheme {
 
   static ThemeData darkTheme = ThemeData(
     primaryColor: primary,
+    scaffoldBackgroundColor: background,
+    inputDecorationTheme: InputDecorationThemeData(
+      filled: true,
+      fillColor: background.withValues(alpha: 0.7),
+      hintStyle: TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+        color: white.withValues(alpha: 0.6),
+      ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: primary),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: primary),
+          borderRadius: BorderRadius.circular(10),
+  ),
+    ),
+    appBarTheme: AppBarTheme(
+     backgroundColor: background,
+      centerTitle: true,
+      foregroundColor: primary,
+      titleTextStyle: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+        color: primary
+      ),
+    ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: primary,
         type: BottomNavigationBarType.fixed,
@@ -38,17 +66,7 @@ class AppTheme {
             fontWeight: FontWeight.bold,
             color: white
         ),
-        headlineLarge
-            : TextStyle(
-              fontWeight: FontWeight.w700,
-              color: primary,
-              fontSize: 24
-          ),
-          headlineMedium: TextStyle(
-              fontWeight: FontWeight.w700,
-              color: primary,
-              fontSize: 20
-          )
-      ),
+
+    )
   );
 }

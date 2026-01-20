@@ -72,7 +72,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     Text(
                       pages[index].title,
                       textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.headlineLarge
+                      style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                        color: AppTheme.primary,),
                     ),
 
                     const SizedBox(height: 40),
@@ -82,7 +83,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       child: Text(
                         pages[index].body,
                         textAlign: TextAlign.center,
-                        style: Theme.of(context).textTheme.headlineMedium
+                        style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                          color: AppTheme.primary,),
                       ),
                     ),
 
